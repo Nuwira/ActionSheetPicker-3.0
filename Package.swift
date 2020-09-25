@@ -5,18 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "ActionSheetPicker-3.0",
-                      targets: [.target(name: "Alamofire",
-                                        path: "Source")],
-
     products: [
         .library(
             name: "ActionSheetPicker-3.0",
-            targets: ["ActionSheetPicker-3.0"]),
+            targets: ["CoreActionSheetPicker"]),
     ],
     targets: [
         .target(
             name: "CoreActionSheetPicker",
-            path: "CoreActionSheetPicker")
+            path: "CoreActionSheetPicker",
+            cSettings: [
+                .headerSearchPath("CoreActionSheetPicker")
+            ])
         ],
     swiftLanguageVersions: [.v5]
 )
